@@ -1,47 +1,43 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div class="app">
+      <button @click="startGame">Start Game</button>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
-</template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
+  </template>
+  
+  <script>
+  export default {
+    name: 'App',
+    methods: {
+      startGame() {
+        console.log('Game started!');
+        // Hier kannst du später deine Spiellogik starten
+      }
+    }
+  }
+  </script>
+  
+  <style scoped>
+  .app {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #42b983;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  
+  button:hover {
+    background-color: #36966f;
   }
-}
-</style>
+  </style>
+  
